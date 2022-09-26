@@ -3,24 +3,28 @@
         "img": "../assets/images/travel1.jpg",
         "alt": "Amalfi Coast",
         "name": "Amalfi Coast",
-        "button": "View Destination"
+        "button": "View Destination",
+        "link": "/trips"
     },
     {
         "img": "../assets/images/travel2.jpg",
         "alt": "Sorrento",
         "name": "Sorrento",
-        "button": "View Destination"
+        "button": "View Destination",
+        "link": "/trips"
     },
     {
         "img": "../assets/images/travel3.jpg",
         "alt": "Positano",
         "name": "Positano",
-        "button": "View Destination"
+        "button": "View Destination",
+        "link": "/trips"
     },
     {
         "img": "../assets/images/travel4.jpg",
         "alt": "Ravello",
         "name": "Ravello",
-        "button": "View Destination"
+        "button": "View Destination",
+        "link": "/trips"
     }
 ]
