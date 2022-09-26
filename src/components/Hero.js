@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Button } from './Button'
 import Video from "../assets/videos/herovideo.mp4"
 
-const Hero = () => {
+const Hero = ({heading, desc, btnText}) => {
   return (
     <HeroContainer>
         <HeroBg>
@@ -11,9 +11,9 @@ const Hero = () => {
         </HeroBg>
         <HeroContent>
             <HeroItems>
-                <HeroH1>Unreal Destinations</HeroH1>
-                <HeroP>Out of this world</HeroP>
-                <Button primary="true" big="true" round="true" to="/trips">Travel Now</Button>
+                <HeroH1>{ heading }</HeroH1>
+                <HeroP>{ desc }</HeroP>
+                <Button primary="true" big="true" round="true" to="/trips">{ btnText }</Button>
             </HeroItems>
         </HeroContent>
     </HeroContainer>

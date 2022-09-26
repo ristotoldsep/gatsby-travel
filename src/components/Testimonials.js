@@ -6,7 +6,7 @@ import { FaRegLightbulb } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 
 
-const Testimonials = () => {
+const Testimonials = ({ sectionTitle, desc }) => {
     const data = useStaticQuery(graphql`
       query TestimonialQuery {
         allFile(
@@ -29,8 +29,8 @@ const Testimonials = () => {
   return (
     <TestimonialsContainer>
       {console.log(data)}
-      <TopLine>Testimonials</TopLine>
-      <Description>What People are Saying</Description>
+      <TopLine>{ sectionTitle }</TopLine>
+      <Description>{ desc }</Description>
       <ContentWrapper>
         <ColumnOne>
           <Testimonial>
@@ -146,6 +146,13 @@ const ColumnTwo = styled.div`
 `
 
 const Images = styled(GatsbyImage)`
-    border-radius: 10px;
-    height: 100%;
+  border-radius: 10px;
+  height: 100%;
+
+  filter: brightness(85%);
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    filter: brightness(100%);
+  }
 `

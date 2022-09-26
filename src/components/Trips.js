@@ -5,64 +5,63 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Button } from "./Button"
 import { ImLocation } from "react-icons/im"
 
-const Trips = ({ heading }) => {
-
-    const data = useStaticQuery(graphql`
-      query MyQuery {
-        trips: allTripsJson {
-          edges {
-            node {
-              alt
-              button
-              name
-              link
-              img {
-                childImageSharp {
-                  gatsbyImageData(width: 1000, placeholder: TRACED_SVG)
-                }
+const Trips = ({ sectionTitle }) => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      trips: allTripsJson {
+        edges {
+          node {
+            alt
+            button
+            name
+            link
+            img {
+              childImageSharp {
+                gatsbyImageData(width: 1000, placeholder: TRACED_SVG)
               }
             }
           }
         }
       }
-    `)
-
-    const getTrips = (data) => {
-        const tripsArray = []
-        data.trips.edges.forEach((item, index) => {
-            const image = getImage(item.node.img)
-            tripsArray.push(
-              <ProductCard key={index}>
-                <ProductImg image={image} alt={item.node.alt} />
-                <ProductInfo>
-                  <TextWrap>
-                    <ImLocation />
-                    <ProductTitle>{item.node.name}</ProductTitle>
-                    <Button 
-                        to={item.node.link} 
-                        primary="true" 
-                        round="true" 
-                        css={`position: absolute; top: 40px; font-size: 12px;`}
-                    >
-                        {item.node.button}
-                    </Button>
-                  </TextWrap>
-                </ProductInfo>
-              </ProductCard>
-            )
-        })
-        return tripsArray
     }
+  `)
+
+  const getTrips = data => {
+    const tripsArray = []
+    data.trips.edges.forEach((item, index) => {
+      const image = getImage(item.node.img)
+      tripsArray.push(
+        <ProductCard key={index}>
+          <ProductImg image={image} alt={item.node.alt} />
+          <ProductInfo>
+            <TextWrap>
+              <ImLocation />
+              <ProductTitle>{item.node.name}</ProductTitle>
+              <Button
+                to={item.node.link}
+                primary="true"
+                round="true"
+                css={`
+                  position: absolute;
+                  top: 40px;
+                  font-size: 12px;
+                `}
+              >
+                {item.node.button}
+              </Button>
+            </TextWrap>
+          </ProductInfo>
+        </ProductCard>
+      )
+    })
+    return tripsArray
+  }
 
   return (
     <ProductsContainer>
-        {console.log(data)}
-        <ProductsHeading>
-            {heading}
-        </ProductsHeading>
-        <ProductWrapper>
-            {getTrips(data)}
-        </ProductWrapper>
+      {console.log(data)}
+      <ProductsHeading>{ sectionTitle }</ProductsHeading>
+      <ProductWrapper>{getTrips(data)}</ProductWrapper>
     </ProductsContainer>
   )
 }
