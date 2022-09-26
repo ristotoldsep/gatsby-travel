@@ -10,7 +10,7 @@ const Header = () => {
   
   return (
     <Nav>
-      <NavLink to="/">EXPLOREX</NavLink>
+      <NavLink to="/" className="logo">EXPLOREX</NavLink>
       <Bars />
       <NavMenu>
         {menuData.map((item, index) => (
@@ -36,6 +36,18 @@ const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: .4s ease;
+
+    &:hover {
+     transform: scale(1.08);
+    }
+  }
+
+
 `
 
 const NavLink = styled(Link)`
@@ -47,6 +59,7 @@ const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
 
+  
 `
 
 const Bars = styled(FaBars)`
