@@ -21,13 +21,18 @@ const Hero = ({heading, desc, btnText}) => {
           >
             {heading}
           </HeroH1>
-          <HeroP
-            data-sal="slide-up"
-            data-sal-delay="300"
-          >
+          <HeroP data-sal="slide-up" data-sal-delay="300">
             {desc}
           </HeroP>
-          <Button primary="true" big="true" round="true" to="/trips">
+          <Button
+            primary="true"
+            big="true"
+            round="true"
+            to="/trips"
+            data-sal="slide-up"
+            data-sal-delay="500"
+            data-sal-easing="ease"
+          >
             {btnText}
           </Button>
         </HeroItems>

@@ -9,8 +9,10 @@ import { Button } from "./Button"
 const Header = () => {
   
   return (
-    <Nav>
-      <NavLink to="/" className="logo">EXPLOREX</NavLink>
+    <Nav data-sal="fade" data-sal-delay="300" data-sal-easing="ease">
+      <NavLink to="/" className="logo">
+        EXPLOREX
+      </NavLink>
       <Bars />
       <NavMenu>
         {menuData.map((item, index) => (
@@ -20,7 +22,9 @@ const Header = () => {
         ))}
       </NavMenu>
       <NavBtn>
-        <Button primary="true" round="true" to="/trips">Book a Flight</Button>
+        <Button primary="true" round="true" to="/trips">
+          Book a Flight
+        </Button>
       </NavBtn>
     </Nav>
   )
