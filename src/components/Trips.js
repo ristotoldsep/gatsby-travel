@@ -59,8 +59,13 @@ const Trips = ({ sectionTitle }) => {
 
   return (
     <ProductsContainer>
-      {console.log(data)}
-      <ProductsHeading>{ sectionTitle }</ProductsHeading>
+      <ProductsHeading
+        data-sal="slide-up"
+        data-sal-delay="300"
+        data-sal-easing="ease"
+      >
+        {sectionTitle}
+      </ProductsHeading>
       <ProductWrapper>{getTrips(data)}</ProductWrapper>
     </ProductsContainer>
   )

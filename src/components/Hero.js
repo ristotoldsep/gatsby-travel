@@ -6,16 +6,32 @@ import Video from "../assets/videos/herovideo.mp4"
 const Hero = ({heading, desc, btnText}) => {
   return (
     <HeroContainer>
-        <HeroBg>
-            <VideoBg src={ Video } type="video/mp4" autoPlay loop muted playsInline />
-        </HeroBg>
-        <HeroContent>
-            <HeroItems>
-                <HeroH1>{ heading }</HeroH1>
-                <HeroP>{ desc }</HeroP>
-                <Button primary="true" big="true" round="true" to="/trips">{ btnText }</Button>
-            </HeroItems>
-        </HeroContent>
+      <HeroBg>
+        <VideoBg src={Video} type="video/mp4" autoPlay loop muted playsInline />
+      </HeroBg>
+      <HeroContent>
+        <HeroItems>
+          <h1 data-sal="fade" data-sal-delay="300" data-sal-easing="ease">
+            Test
+          </h1>
+          <HeroH1
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease"
+          >
+            {heading}
+          </HeroH1>
+          <HeroP
+            data-sal="slide-up"
+            data-sal-delay="300"
+          >
+            {desc}
+          </HeroP>
+          <Button primary="true" big="true" round="true" to="/trips">
+            {btnText}
+          </Button>
+        </HeroItems>
+      </HeroContent>
     </HeroContainer>
   )
 }
