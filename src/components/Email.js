@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { graphql, useStaticQuery } from "gatsby"
+// import { graphql, useStaticQuery } from "gatsby"
 import { Button } from "./Button"
 import Img from "../assets/images/email2.jpg"
 
@@ -9,7 +8,7 @@ import Img from "../assets/images/email2.jpg"
 
 const Email = () => {
 
-  const data = useStaticQuery(graphql`
+  /* const data = useStaticQuery(graphql`
     query emailBgQuery {
       file: allFile(
         filter: {
@@ -26,9 +25,9 @@ const Email = () => {
         }
       }
     }
-  `)
+  `) */
 
-  const image = getImage(data.file.edges[0].node)
+  // const image = getImage(data.file.edges[0].node)
   
 
   return (

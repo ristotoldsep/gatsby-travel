@@ -1,6 +1,6 @@
-import * as React from "react"
-import Footer from "./Footer"
+import React from "react"
 import Header from "./Header"
+import Footer from "./Footer"
 import { GlobalStyle } from "./styles/GlobalStyles"
 
 const Layout = ({ children }) => {
