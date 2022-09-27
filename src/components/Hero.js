@@ -11,9 +11,6 @@ const Hero = ({heading, desc, btnText}) => {
       </HeroBg>
       <HeroContent>
         <HeroItems>
-          <h1 data-sal="fade" data-sal-delay="300" data-sal-easing="ease">
-            Test
-          </h1>
           <HeroH1
             data-sal="slide-up"
             data-sal-delay="300"
